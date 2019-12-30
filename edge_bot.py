@@ -1,12 +1,11 @@
 import re
-
-import discord
 import os
 import dice
-import random
 import dice_sides as ds
+
 from discord.ext import commands
 from dice_roller import roll
+from command_map import dice_map
 
 
 client = commands.Bot(command_prefix="/")
@@ -22,27 +21,23 @@ async def on_message(message):
     if message.content.startswith("/r"):
         channel = message.channel
         reply = f"{message.author.mention}"
-        for dice_roll in message.content.split("+"):
+        for dice_roll in message.content.replace("/r", "").split("+"):
             try:
                 times = int(re.findall(r'\d+', dice_roll)[0])
             except IndexError:
                 times = 1
-            if "bd" in dice_roll or "boost die" in dice_roll:
-                reply += f"\n`Boost Die` = {roll(dice.boost_die, times)}"
-            elif "sbd" in dice_roll or "set back die" in dice_roll:
-                reply += f"\n`Set Back Die` = {roll(dice.set_back_die, times)}"
-            elif "ad" in dice_roll or "ability die" in dice_roll:
-                reply += f"\n`Ability Die` = {roll(dice.ability_die, times)}"
-            elif "dd" in dice_roll or "difficulty die" in dice_roll:
-                reply += f"\n`Difficulty Die` = {roll(dice.difficulty_die, times)}"
-            elif "pd" in dice_roll or "proficiency die" in dice_roll:
-                reply += f"\n`Proficiency Die` = {roll(dice.proficiency_die, times)}"
-            elif "cd" in dice_roll or "challenge die" in dice_roll:
-                reply += f"\n`Challenge Die` = {roll(dice.challenge_die, times)}"
-            elif "fd" in dice_roll or "force die" in dice_roll:
-                reply += f"\n`Force Die` = {roll(dice.force_die, times)}"
-            else:
+
+            try:
+                die = re.sub(r"[0-9]", "", dice_roll).strip().lower()
+            except IndexError:
+                die = "Meow"
+
+            if die not in list(dice_map.keys()):
                 reply += "\nMeow"
+            else:
+                for key, value in dice_map.items():
+                    if key == die:
+                        reply += f"\n`{value[1]}` = {roll(value[0], times)}"
 
         await channel.send(reply)
 
