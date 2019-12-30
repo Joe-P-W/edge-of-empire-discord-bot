@@ -1,4 +1,4 @@
-import dice
+from dice_logic import dice
 
 dice_map = {
     "bd": [dice.set_back_die, "Boost Die"],

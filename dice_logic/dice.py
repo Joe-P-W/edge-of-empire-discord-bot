@@ -1,4 +1,4 @@
-import dice_sides as ds
+from dice_logic import dice_sides as ds
 
 boost_die = [ds.blank, ds.blank, ds.success, ds.success+ds.advantage, ds.advantage+ds.advantage, ds.advantage]
 

@@ -1,11 +1,10 @@
 import re
 import os
-import dice
-import dice_sides as ds
+from dice_logic import dice_sides as ds
 
 from discord.ext import commands
-from dice_roller import roll
-from command_map import dice_map
+from dice_logic.dice_roller import roll
+from dice_logic.command_map import dice_map
 
 
 client = commands.Bot(command_prefix="/")
@@ -61,8 +60,6 @@ async def on_message(message):
                            f"Light = {ds.light}\n"
                            f"Dark = {ds.dark}\n"
                            f"Blank = {ds.blank}")
-
-
 
 
 client.run(os.getenv("edge_bot_token"))
