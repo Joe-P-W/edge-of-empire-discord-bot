@@ -38,7 +38,7 @@ async def on_message(message):
 
         await channel.send(reply)
 
-    elif message.content.startswith("/help"):
+    elif message.content.startswith("/help") or message.content.startswith("/h"):
         channel = message.channel
         reply = f"{message.author.mention}\n"
         if "dice" in message.content or "symbols" in message.content:
