@@ -7,7 +7,6 @@ from dice_logic.dice_roller import roll
 from dice_logic.command_map import dice_map
 
 
-
 client = commands.Bot(command_prefix="/")
 
 
@@ -34,7 +33,8 @@ async def on_message(message):
             else:
                 for key, value in dice_map.items():
                     if key == die:
-                        reply += f"\n`{value[1]}` = {roll(value[0], times)}"
+                        reply += f"\n`{value['dice name']}` = {roll(value['dice faces'], times)}"
+                        break
 
         await channel.send(reply)
 

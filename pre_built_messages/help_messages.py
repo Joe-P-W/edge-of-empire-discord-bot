@@ -1,6 +1,6 @@
 from dice_logic import dice_sides as ds
 
-rolling_help = "To roll a die, type \"/r\" followed any of the following:\n" \
+rolling_help = "To roll a die, type \"/r\" followed by any of the following:\n" \
                "Boost Die = bd\n" \
                "Set Back Die = sbd\n" \
                "Difficulty Die = dd\n" \
