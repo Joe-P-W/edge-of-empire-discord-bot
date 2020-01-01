@@ -1,10 +1,11 @@
 import re
 import os
-from dice_logic import dice_sides as ds
+import pre_built_messages.help_messages as hm
 
 from discord.ext import commands
 from dice_logic.dice_roller import roll
 from dice_logic.command_map import dice_map
+
 
 
 client = commands.Bot(command_prefix="/")
@@ -26,10 +27,7 @@ async def on_message(message):
             except IndexError:
                 times = 1
 
-            try:
-                die = re.sub(r"[0-9]", "", dice_roll).strip().lower()
-            except IndexError:
-                die = "Meow"
+            die = re.sub(r"[0-9]", "", dice_roll).strip().lower()
 
             if die not in list(dice_map.keys()):
                 reply += "\nMeow"
@@ -40,26 +38,17 @@ async def on_message(message):
 
         await channel.send(reply)
 
-    elif message.content == "/help":
+    elif message.content.startswith("/help"):
         channel = message.channel
-        await channel.send(f"{message.author.mention}\n"
-                           "To roll a die type /r followed any number of the following:\n"
-                           "Boost Die = bd\n"
-                           "Set Back Die = sbd\n"
-                           "Difficulty Die = dd\n"
-                           "Proficiency Die = pd\n"
-                           "Challenge Die = cd\n"
-                           "Force Die = fd\n\n"
-                           "The results of the dice rolls are:\n"
-                           f"Success = {ds.success}\n"
-                           f"Fail = {ds.fail}\n"
-                           f"Triumph = {ds.triumph}\n"
-                           f"Advantage = {ds.advantage}\n"
-                           f"Despair = {ds.despair}\n"
-                           f"Threat = {ds.threat}\n"
-                           f"Light = {ds.light}\n"
-                           f"Dark = {ds.dark}\n"
-                           f"Blank = {ds.blank}")
+        reply = f"{message.author.mention}\n"
+        if "dice" in message.content or "symbols" in message.content:
+            reply += hm.dice_help
+        elif "roll" in message.content or "rolling" in message.content:
+            reply += hm.rolling_help
+        else:
+            reply += f"{hm.rolling_help}\n\nResult symbols:\n{hm.dice_help}"
+
+        await channel.send(reply)
 
 
 client.run(os.getenv("edge_bot_token"))
