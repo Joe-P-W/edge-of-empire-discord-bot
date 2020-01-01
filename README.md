@@ -32,8 +32,8 @@ To roll more than one of a differing dice separate them by a "+" "/r 2fd + 6sbd"
 
 For help at any time type "/help" and the bot will give you instructions
 
-##Requirements
-This bot required Python 3.7 and the discord.py package to install this:
+##Requirements  
+This bot requires Python 3.7 and the discord.py package to install this:
 ```pip install discord.py``` or if you have any problems look at the discord.py page: 
 https://pypi.org/project/discord.py/
 
