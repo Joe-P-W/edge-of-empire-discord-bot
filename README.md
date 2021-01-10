@@ -3,6 +3,7 @@
 ## Invite Edge Bot to your discord server
 https://discord.com/api/oauth2/authorize?client_id=661273326492188672&permissions=522304&scope=bot
 
+## Using the bot
 This bot allows you to roll the specialised dice for the Star Wars RPG Edge of Empire.  
 The following dice can be rolled:  
 - Boost Die
@@ -36,12 +37,14 @@ To roll more than one of a differing dice separate them by a "+" "/r 2fd + 6sbd"
 
 For help at any time type "/help" and the bot will give you instructions
 
-## Requirements  
+## Setup Locally
+
+### Requirements  
 This bot requires Python 3.7 and the discord.py package to install this:
 ```pip install discord.py``` or if you have any problems look at the discord.py page: 
 https://pypi.org/project/discord.py/
 
-## Set Up
+### Set Up
 1. To set it up follow the steps 2, 3 and 4 from:   
  https://www.digitaltrends.com/gaming/how-to-make-a-discord-bot/  
 2. Once you have set it up and invited it to the server you need to link it to the python
