@@ -1,4 +1,8 @@
 # Edge of Empire Discord Bot
+
+## Invite Edge Bot to your discord server
+https://discord.com/api/oauth2/authorize?client_id=661273326492188672&permissions=522304&scope=bot
+
 This bot allows you to roll the specialised dice for the Star Wars RPG Edge of Empire.  
 The following dice can be rolled:  
 - Boost Die
