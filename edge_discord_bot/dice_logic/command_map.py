@@ -1,4 +1,4 @@
-from edge_dicord_bot.dice_logic import dice
+from edge_discord_bot.dice_logic import dice
 
 dice_map = {
     "bd": 

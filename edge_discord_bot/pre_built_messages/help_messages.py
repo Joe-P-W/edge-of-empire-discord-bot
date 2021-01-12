@@ -1,4 +1,4 @@
-from edge_dicord_bot.dice_logic import dice_sides as ds
+from edge_discord_bot.dice_logic import dice_sides as ds
 
 rolling_help = "To roll a die, type \"/r\" followed by any of the following:\n" \
                "Boost Die = bd\n" \

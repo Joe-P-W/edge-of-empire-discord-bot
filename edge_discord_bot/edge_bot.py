@@ -1,10 +1,10 @@
 import re
 import os
-import edge_dicord_bot.pre_built_messages.help_messages as hm
+import edge_discord_bot.pre_built_messages.help_messages as hm
 
 from discord.ext import commands
-from edge_dicord_bot.dice_logic.dice_roller import roll
-from edge_dicord_bot.dice_logic.command_map import dice_map
+from edge_discord_bot.dice_logic.dice_roller import roll
+from edge_discord_bot.dice_logic.command_map import dice_map
 
 
 async def on_ready():
