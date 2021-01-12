@@ -1,0 +1,76 @@
+Metadata-Version: 2.1
+Name: edge-discord-bot-Joe-P-W
+Version: 0.0.1
+Summary: An mtg discord bot
+Home-page: https://github.com/Joe-P-W/mtg_discord_bot
+Author: Joe W
+Author-email: 
+License: UNKNOWN
+Description: # Edge of Empire Discord Bot
+        
+        ## Invite Edge Bot to your discord server
+        https://discord.com/api/oauth2/authorize?client_id=661273326492188672&permissions=522304&scope=bot
+        
+        ## Using the bot
+        This bot allows you to roll the specialised dice for the Star Wars RPG Edge of Empire.  
+        The following dice can be rolled:  
+        - Boost Die
+        - Set Back Die
+        - Difficulty Die
+        - Proficiency Die
+        - Challenge Die
+        - Force Die
+        
+        The specialised symbols on these dice are as follows:  
+        - Success = ✶
+        - Fail = ▼
+        - Triumph = ⎈
+        - Advantage = ℧
+        - Despair = ⎊
+        - Threat = ⎔
+        - Light = ○
+        - Dark = ●
+        - Blank = ▢
+        
+        To roll a die, type "/r" followed by any of the following:
+        - Boost Die = bd
+        - Set Back Die = sbd
+        - Difficulty Die = dd
+        - Proficiency Die = pd
+        - Challenge Die = cd
+        - Force Die = fd
+        
+        To roll more than one of the same die put a number before your die "/r 3fd".
+        To roll more than one of a differing dice separate them by a "+" "/r 2fd + 6sbd"
+        
+        For help at any time type "/help" and the bot will give you instructions
+        
+        ## Setup Locally
+        
+        ### Requirements  
+        This bot requires Python 3.7 and the discord.py package to install this:
+        ```pip install discord.py``` or if you have any problems look at the discord.py page: 
+        https://pypi.org/project/discord.py/
+        
+        ### Set Up
+        1. To set it up follow the steps 2, 3 and 4 from:   
+         https://www.digitaltrends.com/gaming/how-to-make-a-discord-bot/  
+        2. Once you have set it up and invited it to the server you need to link it to the python
+         files in this repo. To do this take your bot's authorisation token and set it as an 
+         environment variable on your machine.
+         - To do this search "edit system environment variables" and run this (for windows)
+         - Click the environment variables button
+         - Click "New" under user variables
+         - Set "variable name" to: edge_bot_token
+         - Set "variable value" to: the bot's authorisation token you got
+         - Apply and okay out of all the menus and restart your PC
+         
+         Now you will be able to run the "edge_bot.py" file and a terminal should open and print:
+         "Bot initialised" when the bot is ready.  
+         
+         Have fun!
+         
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown

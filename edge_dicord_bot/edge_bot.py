@@ -1,21 +1,16 @@
 import re
 import os
-import pre_built_messages.help_messages as hm
+import edge_dicord_bot.pre_built_messages.help_messages as hm
 
 from discord.ext import commands
-from dice_logic.dice_roller import roll
-from dice_logic.command_map import dice_map
+from edge_dicord_bot.dice_logic.dice_roller import roll
+from edge_dicord_bot.dice_logic.command_map import dice_map
 
 
-client = commands.Bot(command_prefix="/")
-
-
-@client.event
 async def on_ready():
     print("Bot initialised")
 
 
-@client.event
 async def on_message(message):
     if message.content.startswith("/r"):
         channel = message.channel
@@ -51,4 +46,10 @@ async def on_message(message):
         await channel.send(reply)
 
 
-client.run(os.getenv("edge_bot_token"))
+if __name__ == "__main__":
+    bot = commands.Bot(command_prefix="/")
+
+    on_read = bot.event(on_ready)
+    on_message = bot.event(on_message)
+
+    bot.run(os.getenv("edge_bot_token"))

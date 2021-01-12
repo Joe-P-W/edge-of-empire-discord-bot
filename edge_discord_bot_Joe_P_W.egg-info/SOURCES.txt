@@ -1,0 +1,15 @@
+README.md
+setup.py
+edge_dicord_bot/__init__.py
+edge_dicord_bot/edge_bot.py
+edge_dicord_bot/dice_logic/__init__.py
+edge_dicord_bot/dice_logic/command_map.py
+edge_dicord_bot/dice_logic/dice.py
+edge_dicord_bot/dice_logic/dice_roller.py
+edge_dicord_bot/dice_logic/dice_sides.py
+edge_dicord_bot/pre_built_messages/__init__.py
+edge_dicord_bot/pre_built_messages/help_messages.py
+edge_discord_bot_Joe_P_W.egg-info/PKG-INFO
+edge_discord_bot_Joe_P_W.egg-info/SOURCES.txt
+edge_discord_bot_Joe_P_W.egg-info/dependency_links.txt
+edge_discord_bot_Joe_P_W.egg-info/top_level.txt
